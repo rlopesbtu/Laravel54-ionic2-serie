@@ -4,11 +4,18 @@ import { MyApp } from './app.component';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import {ProductListPage} from "../pages/product-list/product-list";
+import {ProductDetailPage} from "../pages/product-detail/product-detail";
+
 @NgModule({
   declarations: [
     MyApp,
     Page1,
-    Page2
+    Page2,
+      ProductListPage,
+      ProductDetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -17,8 +24,14 @@ import { Page2 } from '../pages/page2/page2';
   entryComponents: [
     MyApp,
     Page1,
-    Page2
+    Page2,
+      ProductListPage,
+      ProductDetailPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
 })
 export class AppModule {}
